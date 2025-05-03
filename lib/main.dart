@@ -38,14 +38,16 @@ class MyApp extends StatelessWidget {
                   children: [
                     Card(
                       color: Colors.lime,
+
                       child: Text(
-                        'Income',
+                        'expense',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
+
                     Text('Expenses'),
                     Text('Total Income'),
                   ],
