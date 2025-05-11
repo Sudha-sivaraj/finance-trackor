@@ -1,61 +1,108 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.blue,
-            title: Text('FinanceTracking'),
+    return MaterialApp(title: 'Finance Trackor', home: HomePage());
+  }
+}
 
-            bottom: const TabBar(
-              tabs: [
-                Tab(
-                  icon: Icon(Icons.insert_chart_outlined_sharp),
-                  text: 'Summary',
-                ),
-                Tab(icon: Icon(Icons.ac_unit_rounded), text: 'Transaction'),
-              ],
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+          title: Text(
+            'Finance  Trackor',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.amberAccent,
             ),
           ),
-          body: const TabBarView(
-            children: [
-              Card(
-                color: Colors.greenAccent,
-                elevation: 10,
+          bottom: TabBar(
+            tabs: [Tab(child: Text('Summary')), Tab(child: Text('Transction'))],
+          ),
+        ),
 
-                child: Column(
-                  children: [
-                    Card(
-                      color: Colors.lime,
+        body: TabBarView(
+          children: [
+            ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(20),
 
-                      child: Text(
-                        'expense',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  child: Card(
+                    color: Colors.greenAccent,
+                    margin: EdgeInsets.all(40),
+                    elevation: 10,
+                    shadowColor: Colors.blueGrey,
+                    child: SizedBox(
+                      height: 50,
+                      width: 100,
+
+                      child: Column(
+                        children: [
+                          Text('AnnualIncome', textAlign: TextAlign.center),
+                          Text('5,00,000', textAlign: TextAlign.center),
+                        ],
                       ),
                     ),
-
-                    Text('Expenses'),
-                    Text('Total Income'),
-                  ],
+                  ),
                 ),
-              ),
-              Icon(Icons.ac_unit_rounded),
-            ],
-          ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+
+                  child: Card(
+                    color: Colors.greenAccent,
+                    margin: EdgeInsets.all(40),
+                    elevation: 10,
+                    shadowColor: Colors.blueGrey,
+                    child: SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: Column(
+                        children: [
+                          Text('Expenses', textAlign: TextAlign.center),
+                          Text('3,00,000', textAlign: TextAlign.center),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+
+                  child: Card(
+                    color: Colors.greenAccent,
+                    margin: EdgeInsets.all(40),
+                    elevation: 10,
+                    shadowColor: const Color.fromRGBO(96, 125, 139, 1),
+                    child: SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: Column(
+                        children: [
+                          Text('Total Amount', textAlign: TextAlign.center),
+                          Text('2,00,000', textAlign: TextAlign.center),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Center(child: Icon(Icons.abc_rounded)),
+          ],
         ),
       ),
     );
