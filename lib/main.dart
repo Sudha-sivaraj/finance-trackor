@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
 
                       child: Column(
                         children: [
-                          Text('AnnualIncome', textAlign: TextAlign.center),
+                          Text('YearlyIncome', textAlign: TextAlign.center),
                           Text('5,00,000', textAlign: TextAlign.center),
                         ],
                       ),
