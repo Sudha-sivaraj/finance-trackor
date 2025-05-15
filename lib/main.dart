@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.blue,
           title: Text(
-            'Finance  Trackor',
+            'Personel Finance  Trackor',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
